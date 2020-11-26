@@ -1,0 +1,12 @@
+| {% if param.displayName %} {{ param.displayName }} {% else %} {{ key }} {% endif %} |
+{%- if param.type == 'object' -%}
+{%- set type_name = param.rawType.name -%}
+[{{ type_name }}](#{{ getSafeId(type_name) }})
+{%- else %} {{ param.type }} {{ "of [**" + param.items.name + "**](#" + param.items.name + ")" if param.type == 'array' and param.items.name != undefined }}
+{%- endif %} | {{ param.required }} |
+{%- if param.enum -%} **One of:** {%- for value in param.enum -%}
+{%- set comma = joiner() %}{{ comma() }} `{{ value }}`
+{%- endfor %}. {% endif %}
+{%- if param.format -%} **Format:** {{param.format}}. {% endif -%}
+ {{ param.description | replace("\n", " ") }}
+{%- if param.example %} **Examples:** {{ param.example }}. {% endif %}

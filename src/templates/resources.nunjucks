@@ -1,0 +1,8 @@
+---
+id: {{ title }}
+title: {{ resource.relativeUri }}
+---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+{% include "./resource.nunjucks" %}
