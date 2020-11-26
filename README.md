@@ -29,7 +29,7 @@ USAGE
 # Commands
 <!-- commands -->
 * [`raml2docusaurus help [COMMAND]`](#raml2docusaurus-help-command)
-* [`raml2docusaurus render [FILE]`](#raml2docusaurus-render-file)
+* [`raml2docusaurus render FILE`](#raml2docusaurus-render-file)
 
 ## `raml2docusaurus help [COMMAND]`
 
@@ -46,16 +46,14 @@ OPTIONS
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v3.2.0/src/commands/help.ts)_
 
-## `raml2docusaurus render [FILE]`
+## `raml2docusaurus render FILE`
 
 ```
 USAGE
-  $ raml2docusaurus render [FILE]
+  $ raml2docusaurus render FILE
 
 OPTIONS
-  -f, --force
-  -h, --help       show CLI help
-  -n, --name=name  name to print
+  -h, --help  show CLI help
 ```
 
 _See code: [src/commands/render.ts](https://github.com/eleboucher/raml2docusaurus/blob/v0.0.0/src/commands/render.ts)_
