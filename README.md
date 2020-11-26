@@ -6,7 +6,7 @@ export raml to docusaurus markdown
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
 [![Version](https://img.shields.io/npm/v/raml2docusaurus.svg)](https://npmjs.org/package/raml2docusaurus)
 [![Downloads/week](https://img.shields.io/npm/dw/raml2docusaurus.svg)](https://npmjs.org/package/raml2docusaurus)
-[![License](https://img.shields.io/npm/l/raml2docusaurus.svg)](https://github.com/eleboucher/raml2docusaurus/blob/master/package.json)
+[![License](https://img.shields.io/npm/l/raml2docusaurus.svg)](https://github.com/eleboucher/raml2docusaurus/blob/main/package.json)
 
 <!-- toc -->
 * [Usage](#usage)
