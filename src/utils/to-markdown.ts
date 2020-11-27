@@ -15,11 +15,11 @@ const cleanupMarkdown = (input: any) => {
   return result
 }
 
-const toMarkdown = async (title: string, resource: Record<string, any>): Promise<any> => {
+const toMarkdown = async (title: string, baseUri: string, resource: Record<string, any>): Promise<any> => {
   const template = join(defaultTemplatesDir, 'resources.nunjucks')
 
   const env = configure(defaultTemplatesDir, {autoescape: false})
-  const result = await env.render(template, {title, resource})
+  const result = await env.render(template, {title, baseUri, resource})
 
   return cleanupMarkdown(result)
 }

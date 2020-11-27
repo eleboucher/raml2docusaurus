@@ -7,7 +7,7 @@
 ## {{ (method.method | upper )}} {{ resource.parentUrl }}{{ resource.relativeUri }}
 
 ```
-{{ (method.method | upper )}} {{ resource.parentUrl }}{{ resource.relativeUri }}
+{{ (method.method | upper )}} {{ baseUri }}{{ resource.parentUrl }}{{ resource.relativeUri }}
 ```
 
 {{ method.description }}
