@@ -19,7 +19,7 @@ $ npm install -g raml2docusaurus
 $ raml2docusaurus COMMAND
 running command...
 $ raml2docusaurus (-v|--version|version)
-raml2docusaurus/0.0.10 darwin-x64 node-v15.3.0
+raml2docusaurus/0.0.11 darwin-x64 node-v15.3.0
 $ raml2docusaurus --help [COMMAND]
 USAGE
   $ raml2docusaurus COMMAND
@@ -58,5 +58,5 @@ OPTIONS
   --respect-version  save the file to a /{version} path
 ```
 
-_See code: [src/commands/render.ts](https://github.com/eleboucher/raml2docusaurus/blob/v0.0.10/src/commands/render.ts)_
+_See code: [src/commands/render.ts](https://github.com/eleboucher/raml2docusaurus/blob/v0.0.11/src/commands/render.ts)_
 <!-- commandsstop -->
