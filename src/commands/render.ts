@@ -31,7 +31,7 @@ export default class Render extends Command {
     ramlOBJ = ramljsonexpander.expandJsonSchemas(ramlOBJ)
 
     ramlOBJ.resources.forEach(async (resources: Record<string, any>) => {
-      const title = resources.relativeUri.substring(1).replaceAll('/', '_')
+      const title = resources.relativeUri.substring(1).replaceAll('/', '_').replaceAll('{', '').replaceAll('}', '')
       const ret = await toMarkdown(title, ramlOBJ.baseUri, resources)
       try {
         const path = join(flags.out, title + '.md')
