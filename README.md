@@ -19,7 +19,7 @@ $ npm install -g raml2docusaurus
 $ raml2docusaurus COMMAND
 running command...
 $ raml2docusaurus (-v|--version|version)
-raml2docusaurus/0.0.6 darwin-x64 node-v15.3.0
+raml2docusaurus/0.0.7 darwin-x64 node-v15.3.0
 $ raml2docusaurus --help [COMMAND]
 USAGE
   $ raml2docusaurus COMMAND
@@ -57,5 +57,5 @@ OPTIONS
   -o, --out=out  [default: .] path to save the files
 ```
 
-_See code: [src/commands/render.ts](https://github.com/eleboucher/raml2docusaurus/blob/v0.0.6/src/commands/render.ts)_
+_See code: [src/commands/render.ts](https://github.com/eleboucher/raml2docusaurus/blob/v0.0.7/src/commands/render.ts)_
 <!-- commandsstop -->
