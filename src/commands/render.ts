@@ -23,7 +23,6 @@ export default class Render extends Command {
       default: '.',
     }),
     'respect-version': flags.boolean({
-      char: 'v',
       description: 'save the file to a /{version} path',
       default: false,
     }),
