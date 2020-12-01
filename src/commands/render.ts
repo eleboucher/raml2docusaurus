@@ -22,6 +22,11 @@ export default class Render extends Command {
       description: 'path to save the files',
       default: '.',
     }),
+    'respect-version': flags.boolean({
+      char: 'v',
+      description: 'save the file to a /{version} path',
+      default: false,
+    }),
   }
 
   async run() {
@@ -34,7 +39,10 @@ export default class Render extends Command {
       const title = resources.relativeUri.substring(1).replaceAll('/', '_').replaceAll('{', '').replaceAll('}', '')
       const ret = await toMarkdown(title, ramlOBJ.baseUri, resources)
       try {
-        const path = join(flags.out, title + '.md')
+        let path = join(flags.out, title + '.md')
+        if (flags['respect-version']) {
+          path = join(flags.out, ramlOBJ.version, title + '.md')
+        }
         await fsPromises.writeFile(path, ret, {flag: 'w'})
       } catch (error) {
         // eslint-disable-next-line no-console
