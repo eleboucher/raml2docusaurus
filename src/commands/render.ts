@@ -32,8 +32,7 @@ export default class Render extends Command {
 
     ramlOBJ.resources.forEach(async (resources: Record<string, any>) => {
       const title = resources.relativeUri.substring(1).replaceAll('/', '_')
-      const nameOfProject = ramlOBJ.title.replaceAll(' ', '_')
-      const ret = await toMarkdown(nameOfProject + '_' + title, ramlOBJ.baseUri, resources)
+      const ret = await toMarkdown(title, ramlOBJ.baseUri, resources)
       try {
         const path = join(flags.out, title + '.md')
         await fsPromises.writeFile(path, ret, {flag: 'w'})
