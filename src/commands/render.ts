@@ -39,9 +39,11 @@ export default class Render extends Command {
       const ret = await toMarkdown(title, ramlOBJ.baseUri, resources)
       try {
         let path = join(flags.out, title + '.md')
-        if (flags['respect-version']) {
+        if (flags['respect-version'] && ramlOBJ.version) {
           path = join(flags.out, ramlOBJ.version, title + '.md')
         }
+        // eslint-disable-next-line no-console
+        console.log(`rendering ${path}`)
         await fsPromises.mkdir(dirname(path), {recursive: true})
         await fsPromises.writeFile(path, ret, {flag: 'w'})
       } catch (error) {
