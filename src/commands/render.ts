@@ -1,7 +1,7 @@
 import {Command, flags} from '@oclif/command'
 import {promises as fsPromises} from 'fs'
 import ramljsonexpander = require('raml-jsonschema-expander')
-import {join} from 'path'
+import {join, dirname} from 'path'
 import ramlParser from '../utils/parser'
 import toMarkdown from '../utils/to-markdown'
 
@@ -42,6 +42,7 @@ export default class Render extends Command {
         if (flags['respect-version']) {
           path = join(flags.out, ramlOBJ.version, title + '.md')
         }
+        await fsPromises.mkdir(dirname(path), {recursive: true})
         await fsPromises.writeFile(path, ret, {flag: 'w'})
       } catch (error) {
         // eslint-disable-next-line no-console
