@@ -1,6 +1,6 @@
 
 import {join} from 'path'
-import {configure} from 'nunjucks'
+import {configure, installJinjaCompat} from 'nunjucks'
 
 const defaultTemplatesDir = join(__dirname, '..', 'templates')
 
@@ -18,6 +18,7 @@ const cleanupMarkdown = (input: any) => {
 const toMarkdown = async (title: string, baseUri: string, resource: Record<string, any>): Promise<any> => {
   const template = join(defaultTemplatesDir, 'resources.nunjucks')
 
+  installJinjaCompat()
   const env = configure(defaultTemplatesDir, {autoescape: false})
   const result = await env.render(template, {title, baseUri, resource})
 
