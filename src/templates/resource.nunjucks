@@ -35,7 +35,7 @@
       {%- endfor %}
     {% endif %}
 
-    {% if method.queryParameters %}
+    {% if method.queryParameters  and  method.queryParameters | length > 0%}
 #### Query Parameters
 
 | Name | Type | Required | Description |
@@ -54,7 +54,7 @@
 defaultValue={% if b.schema %}"schema"{% else %}"example"{% endif %}
 values={[{% if b.schema %}{ label: "Schema", value: "schema" },{% endif %}{% if b.example %}{ label: "Example", value: "example" },{% endif %}]}>
 {% if b.schema %}
-<TabItem value="Schema">
+<TabItem value="schema">
 
 Schema:
 
