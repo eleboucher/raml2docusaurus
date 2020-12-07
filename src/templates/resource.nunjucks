@@ -52,7 +52,7 @@
 {% if b.schema or b.example %}
 <Tabs
 defaultValue={% if b.schema %}"schema"{% else %}"example"{% endif %}
-values={[{% if b.schema %}{ label: 'Schema', value: 'schema' },{% endif %}{% if b.example %}{ label: 'Example', value: 'example' },{% endif %}]}>
+values={[{% if b.schema %}{ label: "Schema", value: "schema" },{% endif %}{% if b.example %}{ label: "Example", value: "example" },{% endif %}]}>
 {% if b.schema %}
 <TabItem value="Schema">
 
@@ -81,7 +81,7 @@ Schema:
 ### Responses
 
 <Tabs
-defaultValue={{ method.responses.keys() | first }}
+defaultValue="{{ method.responses.keys() | first }}"
 values={[{% for key, response in method.responses %}{ label: "{{ key }}", value: "{{ key }}" },{% endfor %}]}>
 {% for key, response in method.responses %}
 <TabItem value='{{ key }}'>
