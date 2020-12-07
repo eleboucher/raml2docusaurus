@@ -14,7 +14,6 @@
 
 ### Request
 
-#### Query Parameters
     {% if resource.allUriParameters.length %}
 #### URI Parameters
 
