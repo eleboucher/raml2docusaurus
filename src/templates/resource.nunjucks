@@ -99,7 +99,7 @@ values={[{% for key, response in method.responses %}{ label: "{{ key }}", value:
         {% if response.body %}
           {% for key, b in response.body %}
             {% if b.schema %}
-<details><summary><strong>Schema</strong>:</summary>
+<details open><summary><strong>Schema</strong>:</summary>
 <p>
 
 ```json
