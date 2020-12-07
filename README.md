@@ -30,6 +30,7 @@ USAGE
 <!-- commands -->
 * [`raml2docusaurus help [COMMAND]`](#raml2docusaurus-help-command)
 * [`raml2docusaurus render FILE`](#raml2docusaurus-render-file)
+* [`raml2docusaurus validate [FILE]`](#raml2docusaurus-validate-file)
 
 ## `raml2docusaurus help [COMMAND]`
 
@@ -59,4 +60,18 @@ OPTIONS
 ```
 
 _See code: [src/commands/render.ts](https://github.com/eleboucher/raml2docusaurus/blob/v0.0.17/src/commands/render.ts)_
+
+## `raml2docusaurus validate [FILE]`
+
+```
+USAGE
+  $ raml2docusaurus validate [FILE]
+
+OPTIONS
+  -f, --force
+  -h, --help       show CLI help
+  -n, --name=name  name to print
+```
+
+_See code: [src/commands/validate.ts](https://github.com/eleboucher/raml2docusaurus/blob/v0.0.17/src/commands/validate.ts)_
 <!-- commandsstop -->
