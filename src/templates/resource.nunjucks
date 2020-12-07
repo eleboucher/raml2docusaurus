@@ -35,7 +35,7 @@
       {%- endfor %}
     {% endif %}
 
-    {% if method.queryParameters != {} and  method.queryParameters | length > 0%}
+    {% if method.queryParameters != {} and method.queryParameters | length > 0 %}
 #### Query Parameters
 
 | Name | Type | Required | Description |
