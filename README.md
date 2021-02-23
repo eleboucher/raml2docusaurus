@@ -19,7 +19,7 @@ $ npm install -g raml2docusaurus
 $ raml2docusaurus COMMAND
 running command...
 $ raml2docusaurus (-v|--version|version)
-raml2docusaurus/0.0.17 darwin-x64 node-v15.3.0
+raml2docusaurus/0.0.18 darwin-x64 node-v15.9.0
 $ raml2docusaurus --help [COMMAND]
 USAGE
   $ raml2docusaurus COMMAND
@@ -30,7 +30,7 @@ USAGE
 <!-- commands -->
 * [`raml2docusaurus help [COMMAND]`](#raml2docusaurus-help-command)
 * [`raml2docusaurus render FILE`](#raml2docusaurus-render-file)
-* [`raml2docusaurus validate [FILE]`](#raml2docusaurus-validate-file)
+* [`raml2docusaurus validate FILE`](#raml2docusaurus-validate-file)
 
 ## `raml2docusaurus help [COMMAND]`
 
@@ -59,19 +59,14 @@ OPTIONS
   --respect-version  save the file to a /{version} path
 ```
 
-_See code: [src/commands/render.ts](https://github.com/eleboucher/raml2docusaurus/blob/v0.0.17/src/commands/render.ts)_
+_See code: [src/commands/render.ts](https://github.com/eleboucher/raml2docusaurus/blob/v0.0.18/src/commands/render.ts)_
 
-## `raml2docusaurus validate [FILE]`
+## `raml2docusaurus validate FILE`
 
 ```
 USAGE
-  $ raml2docusaurus validate [FILE]
-
-OPTIONS
-  -f, --force
-  -h, --help       show CLI help
-  -n, --name=name  name to print
+  $ raml2docusaurus validate FILE
 ```
 
-_See code: [src/commands/validate.ts](https://github.com/eleboucher/raml2docusaurus/blob/v0.0.17/src/commands/validate.ts)_
+_See code: [src/commands/validate.ts](https://github.com/eleboucher/raml2docusaurus/blob/v0.0.18/src/commands/validate.ts)_
 <!-- commandsstop -->

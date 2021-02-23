@@ -1,7 +1,7 @@
 {
   "name": "raml2docusaurus",
   "description": "export raml to docusaurus markdown",
-  "version": "0.0.17",
+  "version": "0.0.18",
   "author": "Erwan Leboucher @eleboucher",
   "bin": {
     "raml2docusaurus": "bin/run"
