@@ -65,7 +65,7 @@ Schema:
   {% if b.example %}
   <TabItem value="example">
 
-  ```json
+```json
 {{ b.example  }}
 ```
 </TabItem>
