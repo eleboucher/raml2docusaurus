@@ -19,7 +19,7 @@ $ npm install -g raml2docusaurus
 $ raml2docusaurus COMMAND
 running command...
 $ raml2docusaurus (-v|--version|version)
-raml2docusaurus/0.0.23 darwin-x64 node-v15.10.0
+raml2docusaurus/0.0.24 darwin-x64 node-v15.10.0
 $ raml2docusaurus --help [COMMAND]
 USAGE
   $ raml2docusaurus COMMAND
@@ -59,7 +59,7 @@ OPTIONS
   --respect-version  save the file to a /{version} path
 ```
 
-_See code: [src/commands/render.ts](https://github.com/eleboucher/raml2docusaurus/blob/v0.0.23/src/commands/render.ts)_
+_See code: [src/commands/render.ts](https://github.com/eleboucher/raml2docusaurus/blob/v0.0.24/src/commands/render.ts)_
 
 ## `raml2docusaurus validate FILE`
 
@@ -68,5 +68,5 @@ USAGE
   $ raml2docusaurus validate FILE
 ```
 
-_See code: [src/commands/validate.ts](https://github.com/eleboucher/raml2docusaurus/blob/v0.0.23/src/commands/validate.ts)_
+_See code: [src/commands/validate.ts](https://github.com/eleboucher/raml2docusaurus/blob/v0.0.24/src/commands/validate.ts)_
 <!-- commandsstop -->
