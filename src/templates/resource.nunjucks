@@ -21,7 +21,6 @@ Curl example:
 {{ getCurlStatement(baseURI, method, resource) }}
 ```
 
-
     {% if resource.allUriParameters.length %}
 #### URI Parameters
 
@@ -32,7 +31,7 @@ Curl example:
       {%- endfor %}
     {% endif %}
 
-    {% if method.headers %}
+    {% if method.headers != {} and method.headers | length > 0 %}
 #### Header Parameters
 
 | Name | Type | Required | Description |

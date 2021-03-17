@@ -26,7 +26,9 @@ const getCurlStatement = (
   method.queryParameters = method.queryParameters || {}
   method.method = method.method || 'get'
 
-  const payload = ['patch', 'post', 'put'].includes(method.method) ?
+  const payload = ['patch', 'post', 'put'].includes(method.method) && method.body &&
+  Object.keys(method.body).filter(bodyType => method.body[bodyType].example &&
+    method.body[bodyType].example.length !== 0).length > 0 ?
     ' \\\n\t--data @data.json' :
     ''
   const parentUrl = resource.parentUrl || ''
