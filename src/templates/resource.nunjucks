@@ -12,7 +12,14 @@
 
 {{ method.description }}
 
+
+
 ### Request
+
+Curl example:
+```bash
+{{ getCurlStatement(baseURI, method, resource, b.example) }}
+```
 
     {% if resource.allUriParameters.length %}
 #### URI Parameters
@@ -67,11 +74,7 @@ Schema:
   {% if b.example %}
   <TabItem value="example">
 
-Curl example:
-```bash
-{{ getCurlStatement(baseURI, method, resource, b.example) }}
 
-```
 
 Body example:
 ```json
