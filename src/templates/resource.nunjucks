@@ -74,10 +74,6 @@ Schema:
   {% if b.example %}
   <TabItem value="example">
 
-```bash
-{{ getCurlStatement(baseURI, method, resource) }}
-```
-
 Body example:
 ```json title="data.json"
 {{ b.example  }}
