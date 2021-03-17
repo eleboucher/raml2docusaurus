@@ -27,12 +27,13 @@ const getCurlStatement = (
   method.queryParameters = method.queryParameters || {}
   method.method = method.method || 'get'
 
-  const payload = ['patch', 'post', 'put'].includes(method.method) ?
+  const payload = ['patch', 'post', 'put'].includes(method.method) && example !== '' ?
     ` \\\n\t--data ${(JSON.stringify(example, null, 0) || '').replace(
       /\\n/g,
       ''
     )}` :
     ''
+
   const parentUrl = resource.parentUrl || ''
   const relativeUri = resource.relativeUri || '/'
 
