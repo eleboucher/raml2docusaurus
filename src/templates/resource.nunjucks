@@ -55,11 +55,7 @@ values={[{% if b.schema %}{ label: "Schema", value: "schema" },{% endif %}{% if 
 {% if b.schema %}
 <TabItem value="schema">
 
-Curl example:
-```console
-{{ getCurlStatement(baseURI, method, resource, b.example) }}
 
-```
 
 Schema:
 
@@ -71,6 +67,13 @@ Schema:
   {% if b.example %}
   <TabItem value="example">
 
+Curl example:
+```console
+{{ getCurlStatement(baseURI, method, resource, b.example) }}
+
+```
+
+Body example:
 ```json
 {{ b.example  }}
 ```
