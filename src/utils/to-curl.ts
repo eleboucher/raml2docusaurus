@@ -19,7 +19,6 @@ const getCurlStatement = (
   baseUri: string,
   method: Record<string, any>,
   resource: Record<string, any>,
-  example: string
 ) => {
   baseUri = baseUri || ''
   if (baseUri.endsWith('/')) baseUri = baseUri.slice(0, -1)
@@ -27,13 +26,9 @@ const getCurlStatement = (
   method.queryParameters = method.queryParameters || {}
   method.method = method.method || 'get'
 
-  const payload = ['patch', 'post', 'put'].includes(method.method) && example !== '' ?
-    ` \\\n\t--data ${(JSON.stringify(example, null, 0) || '').replace(
-      /\\n/g,
-      ''
-    )}` :
+  const payload = ['patch', 'post', 'put'].includes(method.method) ?
+    ' \\\n\t--data @data.json' :
     ''
-
   const parentUrl = resource.parentUrl || ''
   const relativeUri = resource.relativeUri || '/'
 
