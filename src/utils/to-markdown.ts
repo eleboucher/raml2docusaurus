@@ -1,6 +1,7 @@
 
 import {join} from 'path'
 import {configure, installJinjaCompat} from 'nunjucks'
+import getCurlStatement from './to-curl'
 
 const defaultTemplatesDir = join(__dirname, '..', 'templates')
 
@@ -20,6 +21,8 @@ const toMarkdown = async (title: string, baseUri: string, resource: Record<strin
 
   installJinjaCompat()
   const env = configure(defaultTemplatesDir, {autoescape: false})
+  .addGlobal('baseURI', baseUri)
+  .addGlobal('getCurlStatement', getCurlStatement)
   const result = await env.render(template, {title, baseUri, resource})
 
   return cleanupMarkdown(result)
