@@ -68,7 +68,7 @@ Schema:
   <TabItem value="example">
 
 Curl example:
-```console
+```bash
 {{ getCurlStatement(baseURI, method, resource, b.example) }}
 
 ```
