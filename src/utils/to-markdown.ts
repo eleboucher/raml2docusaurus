@@ -1,6 +1,5 @@
-
-import {join} from 'path'
-import {configure, installJinjaCompat} from 'nunjucks'
+import { join } from 'path'
+import { configure, installJinjaCompat } from 'nunjucks'
 import getCurlStatement from './to-curl'
 
 const defaultTemplatesDir = join(__dirname, '..', 'templates')
@@ -16,14 +15,18 @@ const cleanupMarkdown = (input: any) => {
   return result
 }
 
-const toMarkdown = async (title: string, baseUri: string, resource: Record<string, any>): Promise<any> => {
+const toMarkdown = async (
+  title: string,
+  baseUri: string,
+  resource: Record<string, any>
+): Promise<any> => {
   const template = join(defaultTemplatesDir, 'resources.nunjucks')
 
   installJinjaCompat()
-  const env = configure(defaultTemplatesDir, {autoescape: false})
-  .addGlobal('baseURI', baseUri)
-  .addGlobal('getCurlStatement', getCurlStatement)
-  const result = await env.render(template, {title, baseUri, resource})
+  const env = configure(defaultTemplatesDir, { autoescape: false })
+    .addGlobal('baseURI', baseUri)
+    .addGlobal('getCurlStatement', getCurlStatement)
+  const result = await env.render(template, { title, baseUri, resource })
 
   return cleanupMarkdown(result)
 }

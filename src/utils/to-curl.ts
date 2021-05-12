@@ -18,7 +18,7 @@ const buildCurlCommand = (methodParams: Record<string, any>) => {
 const getCurlStatement = (
   baseUri: string,
   method: Record<string, any>,
-  resource: Record<string, any>,
+  resource: Record<string, any>
 ) => {
   baseUri = baseUri || ''
   if (baseUri.endsWith('/')) baseUri = baseUri.slice(0, -1)
@@ -26,29 +26,34 @@ const getCurlStatement = (
   method.queryParameters = method.queryParameters || {}
   method.method = method.method || 'get'
 
-  const payload = ['patch', 'post', 'put'].includes(method.method) && method.body &&
-  Object.keys(method.body).filter(bodyType => method.body[bodyType].example &&
-    method.body[bodyType].example.length !== 0).length > 0 ?
-    ' \\\n\t--data @data.json' :
-    ''
+  const payload =
+    ['patch', 'post', 'put'].includes(method.method) &&
+    method.body &&
+    Object.keys(method.body).filter(
+      (bodyType) =>
+        method.body[bodyType].example &&
+        method.body[bodyType].example.length !== 0
+    ).length > 0
+      ? ' \\\n\t--data @data.json'
+      : ''
   const parentUrl = resource.parentUrl || ''
   const relativeUri = resource.relativeUri || '/'
 
   const headers = Object.keys(method.headers)
-  .filter(
-    header =>
-      method.headers[header].example &&
+    .filter(
+      (header) =>
+        method.headers[header].example &&
         method.headers[header].example.length !== 0
-  )
-  .map(header => `-H "${header}: ${method.headers[header].example}"`)
+    )
+    .map((header) => `-H "${header}: ${method.headers[header].example}"`)
 
   const params = Object.keys(method.queryParameters)
-  .filter(
-    param =>
-      method.queryParameters[param].example &&
+    .filter(
+      (param) =>
+        method.queryParameters[param].example &&
         method.queryParameters[param].example.length !== 0
-  )
-  .map(param => `${param}=${method.queryParameters[param].example}`)
+    )
+    .map((param) => `${param}=${method.queryParameters[param].example}`)
 
   const methodParams = {
     method: method.method,

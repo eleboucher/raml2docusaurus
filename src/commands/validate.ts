@@ -1,4 +1,4 @@
-import {Command} from '@oclif/command'
+import { Command } from '@oclif/command'
 import ramlParser from '../utils/parser'
 
 export default class Validate extends Command {
@@ -12,7 +12,7 @@ export default class Validate extends Command {
   ]
 
   async run() {
-    const {args} = this.parse(Validate)
+    const { args } = this.parse(Validate)
     ramlParser(args.file)
   }
 }

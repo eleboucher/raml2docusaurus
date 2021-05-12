@@ -1,6 +1,8 @@
 {
-  "extends": [
-    "oclif",
-    "oclif-typescript"
-  ]
+  "plugins": ["prettier"],
+  "rules": {
+    "prettier/prettier": "error",
+    "semi": "off"
+  },
+  "extends": ["oclif", "oclif-typescript", "plugin:prettier/recommended"]
 }

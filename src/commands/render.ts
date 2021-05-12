@@ -1,7 +1,7 @@
-import {Command, flags} from '@oclif/command'
-import {promises as fsPromises} from 'fs'
+import { Command, flags } from '@oclif/command'
+import { promises as fsPromises } from 'fs'
 import ramljsonexpander = require('raml-jsonschema-expander')
-import {join, dirname} from 'path'
+import { join, dirname } from 'path'
 import ramlParser from '../utils/parser'
 import toMarkdown from '../utils/to-markdown'
 
@@ -16,7 +16,7 @@ export default class Render extends Command {
   ]
 
   static flags = {
-    help: flags.help({char: 'h'}),
+    help: flags.help({ char: 'h' }),
     out: flags.string({
       char: 'o',
       description: 'path to save the files',
@@ -29,13 +29,17 @@ export default class Render extends Command {
   }
 
   async run() {
-    const {args, flags} = this.parse(Render)
+    const { args, flags } = this.parse(Render)
 
     let ramlOBJ = await ramlParser(args.file)
     ramlOBJ = ramljsonexpander.expandJsonSchemas(ramlOBJ)
 
     ramlOBJ.resources.forEach(async (resources: Record<string, any>) => {
-      const title = resources.relativeUri.substring(1).replaceAll('/', '_').replaceAll('{', '').replaceAll('}', '')
+      const title = resources.relativeUri
+        .substring(1)
+        .replaceAll('/', '_')
+        .replaceAll('{', '')
+        .replaceAll('}', '')
       const ret = await toMarkdown(title, ramlOBJ.baseUri, resources)
       try {
         let path = join(flags.out, title + '.md')
@@ -44,8 +48,8 @@ export default class Render extends Command {
         }
         // eslint-disable-next-line no-console
         console.log(`rendering ${path}`)
-        await fsPromises.mkdir(dirname(path), {recursive: true})
-        await fsPromises.writeFile(path, ret, {flag: 'w'})
+        await fsPromises.mkdir(dirname(path), { recursive: true })
+        await fsPromises.writeFile(path, ret, { flag: 'w' })
       } catch (error) {
         // eslint-disable-next-line no-console
         console.log(error)
